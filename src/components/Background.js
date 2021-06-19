@@ -18,7 +18,6 @@ class Background extends Component {
     }
 
     render() {
-        console.log(this.state.color)
         return (
             <div 
                 className='background'
