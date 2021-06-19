@@ -30,9 +30,19 @@ class QuoteMachine extends Component {
 
     render() {
         return (
-            <div>
-                <p>{this.state.quote}</p>
-                <p>{this.state.author}</p>
+            <div className='quoteMachine'>
+                <p 
+                    className='quote'
+                    style={{
+                        color: this.props.color
+                    }}
+                >{this.state.quote}</p>
+                <p 
+                    className='author'
+                    style={{
+                        color: this.props.color
+                    }} 
+                >- {this.state.author}</p>
             </div>
         );
     }

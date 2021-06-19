@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import QuoteMachine from './components/QuoteMachine';
 import Background from './components/Background';
-import './App.css';
+import './App.scss';
 
-const SATURATION = 80;
-const LIGHTNESS = 80;
+const SATURATION = 60;
+const LIGHTNESS = 60;
 
 const generateColor = (saturation, lightness) => {
   return `hsl(${Math.floor(Math.random() * 20) * 18}, ${saturation}%, ${lightness}%)`;

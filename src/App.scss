@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@200;300;400;600;800&display=swap');
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+}
+
+.quoteMachine {
+    font-family: 'Spectral', serif;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: auto;
+    padding: 20px;
+
+    @media(max-width: 700px) {
+        width: 80%;
+    }
+
+    .quote {
+        font-size: 2em;
+        font-weight: 600;
+    }
+
+    .author {
+        font-size: 1.5em;
+        font-weight: 400;
+        text-align: right;
+    }
+}
