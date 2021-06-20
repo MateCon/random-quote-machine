@@ -64,7 +64,7 @@ class QuoteMachine extends Component {
                                 transition: "all .5s ease"
                             }} 
                             >
-                            {
+                                {
                                 this.state.copied === true
                                     ? <FiCheck style={{
                                         color: 'rgb(50, 50, 50)'
@@ -88,6 +88,7 @@ class QuoteMachine extends Component {
                         }}
                     >New quote</button>
                 </div>
+                <a href='https://github.com/matecon'>By MateCon</a>
             </div>
         );
     }

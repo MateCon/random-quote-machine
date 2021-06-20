@@ -62,6 +62,16 @@
             width: 7.5rem;
         }
     }
+
+    a {
+        position: absolute;
+        font-family: 'Spectral', serif;
+        font-weight: 400;
+        font-size: 18;
+        color: white;
+        text-decoration: none;
+        transform: translate(100%, 150%);
+    }
 }
 
 .quotemark {
