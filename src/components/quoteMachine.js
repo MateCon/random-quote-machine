@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FiClipboard } from 'react-icons/fi';
 
 class QuoteMachine extends Component {
     constructor(props) {
@@ -16,7 +17,6 @@ class QuoteMachine extends Component {
             .then(response => response.json())
             .then(data => {
                 let newQuote = data.quotes[Math.floor(Math.random() * (data.quotes.length - 1))];
-                console.log(newQuote);
                 this.setState({
                     quote: newQuote.quote,
                     author: newQuote.author
@@ -26,6 +26,11 @@ class QuoteMachine extends Component {
 
     componentDidMount() {
         this.getQuote();
+    }
+
+    shouldComponentUpdate(nextProps) {
+        console.log(this.props.color)
+        return nextProps.color !== this.props.color;
     }
 
     render() {
@@ -43,8 +48,24 @@ class QuoteMachine extends Component {
                         color: this.props.color
                     }} 
                 >- {this.state.author}</p>
-                <button></button>
-                <button>New quote</button>
+                <div className='buttons'>
+                    <button 
+                        className='copy'
+                        style={{
+                            backgroundColor: this.props.color
+                        }} 
+                    ><FiClipboard /></button>
+                    <button 
+                        className='newQuote'
+                        style={{
+                            backgroundColor: this.props.color
+                        }} 
+                        onClick={() => {
+                            this.getQuote();
+                            this.props.changeColor();
+                        }}
+                    >New quote</button>
+                </div>
             </div>
         );
     }

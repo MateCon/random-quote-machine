@@ -18,13 +18,25 @@ class App extends Component {
       lightness: LIGHTNESS,
       color: generateColor(SATURATION, LIGHTNESS)
     };
+    this.changeColor = this.changeColor.bind(this);
+  }
+
+  changeColor() {
+    this.setState(state => ({
+      color: generateColor(state.saturation, state.lightness)
+    }));
   }
 
   render() {
     return (
       <div className="App">
-        <Background color={this.state.color} />
-        <QuoteMachine color={this.state.color} />
+        <Background
+          color={this.state.color} 
+        />
+        <QuoteMachine 
+          color={this.state.color}
+          changeColor={this.changeColor}
+        />
       </div>
     );
   }
