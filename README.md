@@ -1,6 +1,6 @@
 # random-quote-machine
 
-A random quote generator I made trying to recreate the following repl from freeCodeCamp: https://codepen.io/freeCodeCamp/pen/qRZeGZ
+A random quote generator I made trying to recreate freeCodeCamp's random quote machine: https://codepen.io/freeCodeCamp/pen/qRZeGZ
 
 This is not hosted anywhere yet.
 
