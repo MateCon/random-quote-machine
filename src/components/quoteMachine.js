@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FiClipboard, FiCheck } from 'react-icons/fi';
+import { FaQuoteLeft } from 'react-icons/fa';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 class QuoteMachine extends Component {
@@ -39,7 +40,7 @@ class QuoteMachine extends Component {
                         color: this.props.color,
                         transition: "all .5s ease"
                     }}
-                >{this.state.quote}</p>
+                ><FaQuoteLeft className='quotemark' />{this.state.quote}</p>
                 <p 
                     className='author'
                     style={{
