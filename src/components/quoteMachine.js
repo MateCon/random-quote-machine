@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FiClipboard } from 'react-icons/fi';
+import { FiClipboard, FiCheck } from 'react-icons/fi';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 class QuoteMachine extends Component {
@@ -49,14 +49,27 @@ class QuoteMachine extends Component {
                 >- {this.state.author}</p>
                 <div className='buttons'>
                     <CopyToClipboard text={this.state.quote + ' - ' + this.state.author}
-                        onCopy={() => this.setState({copied: true})}>
+                        onCopy={() => {
+                            this.setState({copied: true});
+                            setTimeout(
+                                () => this.setState({copied: false}),
+                                3000
+                            );
+                        }}>
                         <button 
                             className='copy'
                             style={{
                                 backgroundColor: this.props.color,
                                 transition: "all .5s ease"
                             }} 
-                            ><FiClipboard />
+                            >
+                            {
+                                this.state.copied === true
+                                    ? <FiCheck style={{
+                                        color: 'rgb(50, 50, 50)'
+                                    }} /> 
+                                    : <FiClipboard />
+                            }
                         </button>
                     </CopyToClipboard>
                     <button 
@@ -68,6 +81,9 @@ class QuoteMachine extends Component {
                         onClick={() => {
                             this.getQuote();
                             this.props.changeColor();
+                            this.setState({
+                                copied: false
+                            });
                         }}
                     >New quote</button>
                 </div>
