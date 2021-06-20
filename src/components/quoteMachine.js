@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FiClipboard } from 'react-icons/fi';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 class QuoteMachine extends Component {
     constructor(props) {
@@ -7,12 +8,13 @@ class QuoteMachine extends Component {
         this.state = {
             url: 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json',
             quote: null,
-            author: null
+            author: null,
+            copied: false
         }
         this.getQuote = this.getQuote.bind(this);
     }
 
-    getQuote = () => {
+    getQuote() {
         fetch(this.state.url)
             .then(response => response.json())
             .then(data => {
@@ -26,11 +28,6 @@ class QuoteMachine extends Component {
 
     componentDidMount() {
         this.getQuote();
-    }
-
-    shouldComponentUpdate(nextProps) {
-        console.log(this.props.color)
-        return nextProps.color !== this.props.color;
     }
 
     render() {
@@ -51,13 +48,17 @@ class QuoteMachine extends Component {
                     }} 
                 >- {this.state.author}</p>
                 <div className='buttons'>
-                    <button 
-                        className='copy'
-                        style={{
-                            backgroundColor: this.props.color,
-                            transition: "all .5s ease"
-                        }} 
-                    ><FiClipboard /></button>
+                    <CopyToClipboard text={this.state.quote + ' - ' + this.state.author}
+                        onCopy={() => this.setState({copied: true})}>
+                        <button 
+                            className='copy'
+                            style={{
+                                backgroundColor: this.props.color,
+                                transition: "all .5s ease"
+                            }} 
+                            ><FiClipboard />
+                        </button>
+                    </CopyToClipboard>
                     <button 
                         className='newQuote'
                         style={{
