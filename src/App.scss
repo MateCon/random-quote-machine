@@ -12,6 +12,7 @@
 .quoteMachine {
     font-family: 'Spectral', serif;
     background-color: white;
+    border-radius: 2px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -27,11 +28,14 @@
     .quote {
         font-size: 2em;
         font-weight: 600;
+        text-align: center;
+        margin-bottom: 0px;
     }
 
     .author {
-        font-size: 1.5em;
+        font-size: 1.25em;
         font-weight: 400;
         text-align: right;
+        margin-top: 0px;
     }
 }

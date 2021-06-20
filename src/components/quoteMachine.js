@@ -43,6 +43,8 @@ class QuoteMachine extends Component {
                         color: this.props.color
                     }} 
                 >- {this.state.author}</p>
+                <button></button>
+                <button>New quote</button>
             </div>
         );
     }
