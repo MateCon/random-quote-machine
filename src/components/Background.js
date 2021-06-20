@@ -10,7 +10,8 @@ class Background extends Component {
             <div 
                 className='background'
                 style={{
-                    backgroundColor: this.props.color
+                    backgroundColor: this.props.color,
+                    transition: "all .5s ease"
                 }} 
             />
         );

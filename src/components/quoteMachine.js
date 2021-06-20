@@ -39,26 +39,30 @@ class QuoteMachine extends Component {
                 <p 
                     className='quote'
                     style={{
-                        color: this.props.color
+                        color: this.props.color,
+                        transition: "all .5s ease"
                     }}
                 >{this.state.quote}</p>
                 <p 
                     className='author'
                     style={{
-                        color: this.props.color
+                        color: this.props.color,
+                        transition: "all .5s ease"
                     }} 
                 >- {this.state.author}</p>
                 <div className='buttons'>
                     <button 
                         className='copy'
                         style={{
-                            backgroundColor: this.props.color
+                            backgroundColor: this.props.color,
+                            transition: "all .5s ease"
                         }} 
                     ><FiClipboard /></button>
                     <button 
                         className='newQuote'
                         style={{
-                            backgroundColor: this.props.color
+                            backgroundColor: this.props.color,
+                            transition: "all .5s ease"
                         }} 
                         onClick={() => {
                             this.getQuote();
